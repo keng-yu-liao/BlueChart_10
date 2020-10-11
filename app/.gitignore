@@ -1,0 +1,11 @@
+# Android Studio Default.
+/.idea
+/captures
+/build
+/local.properties
+*.iml
+.externalNativeBuild
+.gradle
+.DS_Store
+
+# Project Setting.
