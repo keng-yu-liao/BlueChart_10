@@ -5,4 +5,14 @@
     <string name="login_device_name_title">。device name</string>
     <string name="login_log_in">GO</string>
 
+    //Search頁面
+    <string name="search_title">People around Me</string>
+    <string name="search_status_not_connected">not connected</string>
+    <string name="search_status_connecting">connecting</string>
+    <string name="search_status_connected">connected</string>
+    <string name="search_btn_search_devices">Search Devices</string>
+    <string name="search_btn_make_visible">Make Visible</string>
+    <string name="search_paired_devices">Paired Devices</string>
+    <string name="search_searched_devices">Searched Devices</string>
+
 </resources>
