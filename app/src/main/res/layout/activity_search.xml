@@ -24,6 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textSize="@dimen/text_size_mid_small"
+        android:textColor="@color/colorGray"
         tools:text="not connected"
         app:layout_constraintEnd_toEndOf="@+id/tv_title_search"
         app:layout_constraintStart_toStartOf="@+id/tv_title_search"

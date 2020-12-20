@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bluechart_10.R
 import com.example.bluechart_10.core.bluetooth.BluetoothRepository
@@ -37,22 +38,27 @@ class SearchActivity : AppCompatActivity() {
     private fun initViewModel() {
         val bluetoothRepository = BluetoothRepository()
         val viewModelFactory = ViewModelFactory{
-            SearchViewModel(bluetoothRepository)
+            SearchViewModel(bluetoothRepository, application)
         }
         searchViewModel = ViewModelProvider(this@SearchActivity, viewModelFactory).get(SearchViewModel::class.java)
         searchViewModel.pairedDeviceList.observe(this@SearchActivity, Observer {
             (rcv_paired_devices.adapter as SearchAdapter).updateSearchList(it)
         })
+        searchViewModel.pairedState.observe(this@SearchActivity, Observer {
+            tv_status_search.text = it
+        })
     }
 
     private fun init() {
         searchViewModel.updatePairedDeviceList()
+        searchViewModel.updatePairedState()
     }
 
     private fun initPairedRcv() {
         rcv_paired_devices.apply {
             layoutManager = LinearLayoutManager(this@SearchActivity)
             adapter = SearchAdapter(SearchAdapter.ListType.Paired)
+            addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
         }
     }
 }
