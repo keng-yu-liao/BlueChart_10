@@ -2,7 +2,7 @@
     <string name="app_name">BlueChart_10</string>
 
     //Login頁面
-    <string name="login_device_name_title">。device name</string>
+    <string name="login_device_name_title">device name</string>
     <string name="login_log_in">GO</string>
 
     //Search頁面
