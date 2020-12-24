@@ -3,6 +3,8 @@ package com.example.bluechart_10.section.search
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -42,8 +44,16 @@ class SearchActivity : AppCompatActivity() {
         }
         searchViewModel = ViewModelProvider(this@SearchActivity, viewModelFactory).get(SearchViewModel::class.java)
         searchViewModel.pairedDeviceList.observe(this@SearchActivity, Observer {
-            (rcv_paired_devices.adapter as SearchAdapter).updateSearchList(it)
+            if (it.isEmpty()) {
+                rcv_paired_devices.visibility = GONE
+                tv_paired_devices_no_data.visibility = VISIBLE
+            } else {
+                rcv_paired_devices.visibility = VISIBLE
+                tv_paired_devices_no_data.visibility = GONE
+                (rcv_paired_devices.adapter as SearchAdapter).updateSearchList(it)
+            }
         })
+
         searchViewModel.pairedState.observe(this@SearchActivity, Observer {
             tv_status_search.text = it
         })
