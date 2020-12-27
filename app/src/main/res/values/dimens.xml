@@ -3,6 +3,7 @@
     <dimen name="text_size_rcv_title">20sp</dimen>
     <dimen name="text_size_rcv_item">18sp</dimen>
 
+    <dimen name="text_size_small">12sp</dimen>
     <dimen name="text_size_mid_small">16sp</dimen>
     <dimen name="text_size_mid">20sp</dimen>
     <dimen name="text_size_mid_big">25sp</dimen>

@@ -110,15 +110,45 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rcv_paired_devices" />
 
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/searching_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="search_progress_bar, tv_searching_devices" />
+
+                <ProgressBar
+                    android:id="@+id/search_progress_bar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:indeterminateTint="@color/colorGray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_searched_devices_title" />
+
+                <TextView
+                    android:id="@+id/tv_searching_devices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_searching_devices"
+                    android:textColor="@color/colorGray"
+                    android:textSize="@dimen/text_size_mid_small"
+                    app:layout_constraintBottom_toBottomOf="@+id/search_progress_bar"
+                    app:layout_constraintTop_toTopOf="@+id/search_progress_bar"
+                    app:layout_constraintStart_toEndOf="@+id/search_progress_bar"/>
+
                 <include
                     android:id="@+id/tv_searched_devices_no_data"
                     layout="@layout/item_search_no_paired_device"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_searched_devices_title" />
+
 
 
                 <androidx.recyclerview.widget.RecyclerView

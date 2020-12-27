@@ -15,6 +15,7 @@
     <string name="search_paired_devices">Paired Devices</string>
     <string name="search_searched_devices">Searched Devices</string>
     <string name="search_no_devices">no devices</string>
+    <string name="search_searching_devices">searching devices...</string>
 
     //Search頁面 - bluetooth connect status
     <string name="bluetooth_status_disconnected">disconnected</string>
