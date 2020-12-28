@@ -18,4 +18,8 @@ class BluetoothRepository {
     fun getConnectionState(): Int {
         return mBluetoothAdapter.getProfileConnectionState(BluetoothHeadset.HEADSET)
     }
+
+    fun startDiscovery() {
+        mBluetoothAdapter.startDiscovery()
+    }
 }

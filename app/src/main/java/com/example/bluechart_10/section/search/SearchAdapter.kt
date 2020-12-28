@@ -16,10 +16,8 @@ class SearchAdapter(private val listType: ListType) : RecyclerView.Adapter<Recyc
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (listType == ListType.Paired) {
             PairedDeviceViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_search_paired_device, parent, false))
-
         } else {
             SearchedDeviceViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_search_paired_device, parent, false))
-
         }
     }
 
@@ -28,7 +26,11 @@ class SearchAdapter(private val listType: ListType) : RecyclerView.Adapter<Recyc
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as PairedDeviceViewHolder).bind(updateList[position])
+        if (listType == ListType.Paired) {
+            (holder as PairedDeviceViewHolder).bind(updateList[position])
+        } else {
+            (holder as SearchedDeviceViewHolder).bind(updateList[position])
+        }
     }
 
     fun updateSearchList(newUpdateList: List<BluetoothDevice>) {
@@ -50,8 +52,7 @@ class SearchAdapter(private val listType: ListType) : RecyclerView.Adapter<Recyc
             override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
                 return updateList[oldItemPosition] == newUpdateList[newItemPosition]
             }
-
-        })
+        }).dispatchUpdatesTo(this)
     }
 
     inner class PairedDeviceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

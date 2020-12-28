@@ -114,6 +114,7 @@
                     android:id="@+id/searching_group"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:constraint_referenced_ids="search_progress_bar, tv_searching_devices" />
 
                 <ProgressBar
