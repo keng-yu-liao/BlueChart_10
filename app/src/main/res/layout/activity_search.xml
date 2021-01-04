@@ -151,12 +151,13 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_searched_devices_title" />
 
 
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcv_searched_devices"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_searched_devices_no_data" />

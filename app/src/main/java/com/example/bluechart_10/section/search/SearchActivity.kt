@@ -91,8 +91,9 @@ class SearchActivity : AppCompatActivity() {
 
         searchReceiver = SearchReceiver(object : SearchCallback {
             override fun getDevice(bluetoothDevice: BluetoothDevice) {
-                searchedDeviceList.add(bluetoothDevice)
-                searchViewModel.updateSearchedDeviceList(searchedDeviceList)
+                if (bluetoothDevice.name.isNotEmpty() && !searchedDeviceList.contains(bluetoothDevice)) {
+                    searchedDeviceList.add(bluetoothDevice)
+                }
             }
 
             override fun onSearchStart() {
@@ -105,6 +106,7 @@ class SearchActivity : AppCompatActivity() {
                 rcv_searched_devices.visibility = VISIBLE
                 tv_searched_devices_no_data.visibility = GONE
                 searching_group.visibility = GONE
+                searchViewModel.updateSearchedDeviceList(searchedDeviceList)
             }
         })
 
