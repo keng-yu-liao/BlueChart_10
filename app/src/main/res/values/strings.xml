@@ -17,6 +17,9 @@
     <string name="search_no_devices">no devices</string>
     <string name="search_searching_devices">searching devices…</string>
 
+    //Chat頁面
+    <string name="chat_title">chatting with </string>
+
     //Search頁面 - bluetooth connect status
     <string name="bluetooth_status_disconnected">disconnected</string>
     <string name="bluetooth_status_connected">connected</string>
