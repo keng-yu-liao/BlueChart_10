@@ -4,6 +4,7 @@
     //Login頁面
     <string name="login_device_name_title">device name</string>
     <string name="login_log_in">GO</string>
+    <string name="login_bluetooth_hint">This app will enable your bluetooth</string>
 
     //Search頁面
     <string name="search_title">People around Me</string>
@@ -23,5 +24,11 @@
     //Search頁面 - bluetooth connect status
     <string name="bluetooth_status_disconnected">disconnected</string>
     <string name="bluetooth_status_connected">connected</string>
+
+    //Dialog相關字串
+    <string name="dialog_title">hint</string>
+    <string name="dialog_bluetooth_hint">This app needs to enable bluetooth</string>
+    <string name="dialog_btn_yes">OK</string>
+    <string name="dialog_btn_cancel">Cancel</string>
 
 </resources>
